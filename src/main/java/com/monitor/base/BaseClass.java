@@ -12,19 +12,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeSuite;
 import com.monitor.actiondriver.Action;
 
-
-
 public class BaseClass {
 	//private static final Capabilities Capabilities = null;
 	public static Properties prop;
 	public static Properties loc;
 
-	
 	public static WebDriver driver;
-	
-
-	
-	
 	//loadConfig method is to load the configuration
 	@BeforeSuite(groups = { "Smoke", "Sanity", "Regression" })
 	public void loadConfig() {
@@ -50,35 +43,15 @@ public class BaseClass {
 
 	
 	public static void launchApp() throws MalformedURLException  {
-		
-	
-		
 		ChromeOptions options=new ChromeOptions();
-    	options.addArguments("--headless");
-    	options.addArguments("--disable-gpu");
-    	options.addArguments("--no-sandbox");
-    	
-    	
-    	 driver=new ChromeDriver(options);
-    
-			
-			
-			
-
-		
-	
-		
-
-		
+	    	options.addArguments("--headless");
+	    	options.addArguments("--disable-gpu");
+	    	options.addArguments("--no-sandbox");
+	    	
+    	 	driver=new ChromeDriver(options);
 		driver.manage().window().maximize();
 		Action.implicitWait(driver, 10);
 		Action.pageLoadTimeOut(driver, 30);
 		driver.get(prop.getProperty("url"));
-	
 	}
-
-
-
-
-
 }
