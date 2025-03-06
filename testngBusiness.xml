@@ -6,12 +6,9 @@
 </listeners>
   <test thread-count="5" name="Test">
     <classes> 
-     <class name="com.monitor.testcases.BusinessProcessTest"/>
+     	 <class name="com.monitor.testcases.BusinessProcessTest"/>
 	 <class name="com.monitor.testcases.ProcessInstanceTest"/>
 	 <class name="com.monitor.testcases.ServiceTest"/>
-	 
-     
-  
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
